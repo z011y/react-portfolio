@@ -1,0 +1,62 @@
+.auth-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 150px);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 75%;
+
+  img {
+    height: 100%;
+  }
+
+  .auth-component-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 10px;
+    height: 50vh;
+    width: 50vw;
+    background-color: white;
+    position: fixed;
+
+    .login-component-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .error-text {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        color: $warning;
+      }
+
+      form {
+        padding-top: 42px;
+        padding-bottom: 42px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          @include input-styles();
+          width: 100%;
+        }
+
+        button {
+          @include btn();
+        }
+      }
+    }
+  }
+}

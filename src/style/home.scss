@@ -1,0 +1,65 @@
+.title-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0px;
+  border-bottom-left-radius: 200px;
+  z-index: 1;
+  background-color: white;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 80px;
+    margin-bottom: -50px;
+    margin-left: 100px;
+  }
+
+  h3 {
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+
+  b {
+    color: $primary-color;
+  }
+
+  .last-name {
+    color: $grey;
+  }
+}
+
+.profile-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundImg {
+  width: 100%;
+  max-width: 600px;
+}
+
+.hidden-background {
+  background-color: black;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-top: -200px;
+}
+
+.skills-title {
+  background-color: black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: white;
+  }
+}

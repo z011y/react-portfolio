@@ -1,0 +1,45 @@
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  .row-one {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    align-items: center;
+    input {
+      @include input-styles();
+      margin: 10px 0px;
+      width: 100%;
+    }
+
+    select {
+      @include select-styles();
+    }
+  }
+
+  .row-two {
+    margin: 10px 0px;
+  }
+
+  .image-uploaders {
+    margin: 20px 0px;
+
+    .filepicker {
+      border: 3px dashed black;
+      background-color: white;
+    }
+  }
+
+  .save-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      @include btn();
+    }
+  }
+}

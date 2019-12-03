@@ -1,0 +1,38 @@
+.blog-article-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  .content-wrapper {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-weight: 700;
+      font-size: 50px;
+      letter-spacing: 1px;
+    }
+
+    .featured-image-wrapper {
+      img {
+        width: 100%;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        border-radius: 10px;
+      }
+    }
+
+    .paragraph {
+      font-family: "Open Sans", sans-serif;
+      font-size: 21px;
+      letter-spacing: 1px;
+      line-height: 40px;
+
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+}

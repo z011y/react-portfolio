@@ -1,0 +1,73 @@
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 50px 0px 50px 50px;
+}
+
+.data-list {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 600px;
+  overflow-y: scroll;
+
+  .portfolio-item-thumb {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .portfolio-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+
+    .actions {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 25%;
+
+      a {
+        &:hover {
+          cursor: pointer;
+          filter: opacity(70%);
+        }
+      }
+
+      .edit-icon {
+        color: white;
+        font-size: 20px;
+      }
+
+      .delete-icon {
+        color: $warning;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .portfolio-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    h2 {
+      color: white;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    .portfolio-thumb-img img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
