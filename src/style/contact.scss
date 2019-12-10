@@ -1,0 +1,54 @@
+.contact-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 150px);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 75%;
+
+  img {
+    height: 100%;
+  }
+
+  .contact-modal-wrapper {
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px solid black;
+    border-radius: 10px;
+    height: 50vh;
+    width: 50vw;
+    background-color: white;
+    font-size: 1.5em;
+    color: black;
+
+    .phone {
+      display: flex;
+      align-items: center;
+
+      .phone-number {
+        margin-left: 20px;
+      }
+    }
+
+    .email {
+      display: flex;
+      align-items: center;
+      .email-address {
+        margin-left: 20px;
+      }
+    }
+
+    .address {
+      display: flex;
+      align-items: center;
+      .physical-address {
+        margin-left: 20px;
+      }
+    }
+  }
+}

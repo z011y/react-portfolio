@@ -14,7 +14,6 @@ const BlogItem = props => {
 
   return (
     <div className="blog-preview-wrapper">
-      <div className="blog-list-margin"></div>
       <Link to={`/b/${id}`}>
         <div className="blog-item-wrapper">
           <div className="blog-img-wrapper">
@@ -30,7 +29,6 @@ const BlogItem = props => {
           </div>
         </div>
       </Link>
-      <div className="blog-list-margin"></div>
     </div>
   );
 };

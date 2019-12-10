@@ -8,7 +8,7 @@ export default class PortfolioContainer extends Component {
     super();
     this.state = {
       pageTitle: "Welcome to my portfolio",
-      isLoading: false,
+      isLoading: true,
       data: [],
       color: "black",
       backgroundColor: "white"
@@ -21,30 +21,34 @@ export default class PortfolioContainer extends Component {
   }
 
   handleFilter(filter) {
-    this.setState({
-      data: this.state.data.filter(item => {
-        return item.category === filter;
-      })
-    });
+    if (filter === "CLEAR_FILTERS") {
+      this.getPortfolioItems();
+    } else {
+      this.getPortfolioItems(filter);
+    }
   }
 
-  getPortfolioItems() {
+  getPortfolioItems(filter = null) {
     axios
       .get("https://cameroncharles.devcamp.space/portfolio/portfolio_items")
       .then(response => {
-        // handle success
-        console.log("response data", response);
-        this.setState({
-          data: response.data.portfolio_items
-        });
+        if (filter) {
+          this.setState({
+            data: response.data.portfolio_items.filter(item => {
+              return item.category === filter;
+            })
+          });
+        } else {
+          this.setState({
+            data: response.data.portfolio_items,
+            isLoading: false
+          });
+        }
       })
       .catch(error => {
-        // handle error
         console.log(error);
       })
-      .finally(function() {
-        // always executed
-      });
+      .finally(function() {});
   }
 
   portfolioItems() {
@@ -73,13 +77,19 @@ export default class PortfolioContainer extends Component {
   };
 
   render() {
-    if (this.state.isLoading) {
-      return <div>Loading...</div>;
-    }
-
     return (
       <div className="portfolio-wrapper">
         <div className="btn-wrapper">
+          <button
+            className="btn"
+            onClick={() => this.handleFilter("CLEAR_FILTERS")}
+            style={{
+              color: this.state.color,
+              backgroundColor: this.state.backgroundColor
+            }}
+          >
+            All
+          </button>
           <button
             className="btn"
             onClick={() => this.handleFilter("Front-End")}

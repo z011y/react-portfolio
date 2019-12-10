@@ -38,9 +38,13 @@ export default class BlogDetail extends Component {
   }
 
   handleEditClick() {
-    this.setState({
-      editMode: true
-    });
+    if (this.props.loggedInStatus === "LOGGED_IN") {
+      this.setState({
+        editMode: true
+      });
+    } else {
+      return;
+    }
   }
 
   getBlogItem() {
