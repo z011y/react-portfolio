@@ -1,24 +1,6 @@
 .placeholder-items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  .placeholder-item {
-    height: 350px;
-    background-color: #212f3d;
-    border-radius: 10px;
-    margin: 20px;
-    -webkit-animation: brightness 1s infinite;
-  }
-
-  @-webkit-keyframes brightness {
-    0%,
-    100% {
-      -webkit-filter: brightness(0%);
-    }
-    50% {
-      -webkit-filter: brightness(100%);
-    }
-  }
 }
 
 .portfolio-items-wrapper {
@@ -34,7 +16,7 @@
   height: 100px;
   position: sticky;
   top: 0px;
-  z-index: 2;
+  z-index: 100;
 
   .btn {
     margin-bottom: 20px;
@@ -88,4 +70,16 @@
 
 .image-blur {
   filter: brightness(0%);
+}
+
+@media (max-width: 880px) {
+  .portfolio-items-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-items-wrapper {
+    grid-template-columns: 1fr;
+  }
 }

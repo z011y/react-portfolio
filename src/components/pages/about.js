@@ -1,17 +1,8 @@
 import React from "react";
-import backgroundImg from "../../../static/assets/images/antelopecameroncropped.png";
 
 export default function() {
   return (
-    <div
-      className="about-page-container"
-      style={{
-        backgroundImage: `url(${backgroundImg})`,
-        backgroundPosition: "top",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat"
-      }}
-    >
+    <div className="about-page-container">
       <div className="about-content-wrapper">
         <div className="about-text-wrapper">
           <div className="about-title-wrapper">
