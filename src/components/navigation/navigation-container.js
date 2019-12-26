@@ -117,11 +117,11 @@ export default class NavigationContainer extends Component {
           </div>
 
           {this.props.loggedInStatus === "LOGGED_IN"
-            ? dynamicLink("/portfolio-manager", "Portfolio Manager")
+            ? this.dynamicLink("/portfolio-manager", "Portfolio Manager")
             : null}
 
           {this.props.loggedInStatus === "LOGGED_IN" ? (
-            <a onClick={handleSignOut} className="sign-out-icon">
+            <a onClick={this.handleSignOut} className="sign-out-icon">
               <FontAwesomeIcon icon="sign-out-alt" />
             </a>
           ) : null}
