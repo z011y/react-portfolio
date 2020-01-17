@@ -63,7 +63,7 @@ export default class PortfolioContainer extends Component {
   }
 
   listenScrollEvent = e => {
-    if (window.scrollY > 478.47 + 150 + 100) {
+    if (window.scrollY > 478.47 + 400) {
       this.setState({
         color: "black",
         backgroundColor: "white"

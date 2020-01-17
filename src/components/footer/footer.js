@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../../../static/assets/images/cam-logo-white.png";
+import logo from "../../../static/assets/images/nav/4x/shield-logo-white.png";
 
 const FooterContainer = props => {
   return (

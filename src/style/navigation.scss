@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 150px;
+  height: 100px;
   border-top: 10px solid $primary-color;
   background-color: white;
 
@@ -31,6 +31,7 @@
     align-items: center;
     margin-left: 50px;
     justify-content: center;
+    margin-top: 10px;
 
     .logo-wrapper {
       height: 75%;
@@ -64,7 +65,7 @@
 }
 
 .navbarScroll {
-  transition: 0.3s;
+  transition: 0s;
   position: fixed;
   top: 0;
   margin-top: 10px;

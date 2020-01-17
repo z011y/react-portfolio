@@ -9,7 +9,7 @@ export default class Login extends Component {
       email: "",
       password: "",
       errorText: ""
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
 
@@ -17,30 +17,34 @@ export default class Login extends Component {
   }
 
   handleSubmit(event) {
-    axios.post("https://api.devcamp.space/sessions",
-    {
-      client: {
-        email: this.state.email,
-        password: this.state.password
-      }
-    },
-    { withCredentials: true }
-  ).then(response => {
-    if (response.data.status === 'created') {
-      this.props.handleSuccessfulAuth();
-    } else {
-      this.setState({
-        errorText: "wrong username or password"
+    axios
+      .post(
+        "https://api.devcamp.space/sessions",
+        {
+          client: {
+            email: this.state.email,
+            password: this.state.password
+          }
+        },
+        { withCredentials: true }
+      )
+      .then(response => {
+        if (response.data.status === "created") {
+          this.props.handleSuccessfulAuth();
+        } else {
+          this.setState({
+            errorText: "wrong username or password"
+          });
+          this.props.handleUnsuccessfulAuth();
+        }
       })
-      this.props.handleUnsuccessfulAuth();
-    }
-  }).catch(error => {
-    console.log("some error occurred", error);
-    this.props.handleUnsuccessfulAuth();
-    this.setState({
-      errorText: "an error occurred"
-    })
-  });
+      .catch(error => {
+        console.log("an error occurred", error);
+        this.props.handleUnsuccessfulAuth();
+        this.setState({
+          errorText: "an error occurred"
+        });
+      });
 
     event.preventDefault();
   }
@@ -49,7 +53,7 @@ export default class Login extends Component {
     this.setState({
       [event.target.name]: event.target.value,
       errorText: ""
-    })
+    });
   }
 
   render() {
@@ -78,12 +82,11 @@ export default class Login extends Component {
             onChange={this.handleChange}
           />
 
-        <div>
-          <button className="login-btn">login</button>
-        </div>
+          <div>
+            <button className="login-btn">login</button>
+          </div>
         </form>
       </div>
-
     );
   }
 }

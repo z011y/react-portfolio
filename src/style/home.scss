@@ -1,6 +1,6 @@
 .title-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   margin: 0px;
   border-bottom-left-radius: 200px;
   z-index: 1;
@@ -9,27 +9,44 @@
 }
 
 .title {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-items: center;
+  margin: 100px 0px 200px 0px;
+
+  .name {
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-size: 80px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    height: 300px;
+    grid-gap: 30px;
+    width: 33vw;
+    padding: 50px 50px 20px 50px;
+    filter: drop-shadow(10px 10px 5px $grey);
+  }
 
   h1 {
     font-size: 80px;
-    margin-bottom: -50px;
-    margin-left: 100px;
+    font-weight: 400;
   }
 
   h3 {
-    margin-top: 100px;
-    margin-left: 100px;
+    margin-top: 75px;
+    font-size: 40px;
   }
 
   b {
     color: $primary-color;
+    font-weight: 400;
   }
 
   .last-name {
-    color: $grey;
+    margin-left: 70px;
+    margin-top: -50px;
   }
 }
 

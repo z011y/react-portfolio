@@ -6,7 +6,9 @@
 .portfolio-items-wrapper {
   background-color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 30px;
 }
 
 .btn-wrapper {
@@ -21,15 +23,13 @@
   .btn {
     margin-bottom: 20px;
     color: white;
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     @include base-btn();
   }
 }
 
 .portfolio-item-wrapper {
   position: relative;
-  margin: 40px;
-  transition: 0.5s ease-in-out;
 
   .portfolio-img-background {
     background-size: cover;
@@ -37,8 +37,8 @@
     background-repeat: no-repeat;
     height: 350px;
     width: 100%;
-    border-radius: 50px;
-    transition: 0.5s ease-in-out;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
   }
 
   .img-text-wrapper {
@@ -47,14 +47,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
     height: 100%;
     text-align: center;
     padding-left: 100px;
     padding-right: 100px;
 
     .subtitle {
-      font-family: "Montserrat Alternates", sans-serif;
+      font-family: "Ubuntu", sans-serif;
       transition: 0.5s ease-in-out;
       font-size: 20px;
       font-weight: 700;
@@ -74,7 +74,11 @@
 
 @media (max-width: 880px) {
   .portfolio-items-wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .portfolio-img-background {
+    height: 200px;
   }
 }
 

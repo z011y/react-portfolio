@@ -1,15 +1,9 @@
 import React from "react";
-import BackgroundCircle from "../../../static/assets/images/auth/auth-background@4x.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function() {
   return (
-    <div
-      className="contact-page-wrapper"
-      style={{
-        backgroundImage: `url(${BackgroundCircle})`
-      }}
-    >
+    <div className="contact-page-wrapper">
       <div className="contact-modal-wrapper">
         <div className="phone">
           <FontAwesomeIcon icon="mobile" />

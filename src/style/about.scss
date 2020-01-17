@@ -1,22 +1,21 @@
 .about-page-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 100px 600px;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
 
-  .about-title-wrapper {
-    h2 {
-      font-size: 3em;
-      color: $primary-color;
-    }
+  h1 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-top: 50px;
   }
 
   .about-content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
+    height: 100%;
 
     .about-text-wrapper {
       display: flex;
@@ -29,4 +28,23 @@
       border-radius: 10px;
     }
   }
+}
+
+.right-column {
+}
+
+.profile-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  background-image: url("../../static/assets/images/home/cam-profile1.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundImg {
+  width: 100%;
 }

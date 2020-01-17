@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router";
 
-import logo from "../../../static/assets/images/nav/cam-logo@4x.png";
+import logo from "../../../static/assets/images/nav/4x/shield-logo.png";
 
 export default class NavigationContainer extends Component {
   constructor(props) {

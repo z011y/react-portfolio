@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Login from "../auth/login.js";
-import BackgroundCircle from "../../../static/assets/images/auth/auth-background@4x.png";
 
 export default class Auth extends Component {
   constructor(props) {
@@ -21,12 +20,7 @@ export default class Auth extends Component {
 
   render() {
     return (
-      <div
-        className="auth-page-wrapper"
-        style={{
-          backgroundImage: `url(${BackgroundCircle})`
-        }}
-      >
+      <div className="auth-page-wrapper">
         <div className="auth-component-wrapper">
           <Login
             handleSuccessfulAuth={this.handleSuccessfulAuth}
