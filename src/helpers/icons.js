@@ -1,6 +1,6 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-("");
 import {
   faTimes,
   faSignOutAlt,
@@ -13,8 +13,12 @@ import {
   faGlobeAmericas
 } from "@fortawesome/free-solid-svg-icons";
 
+import { fab, faGithub } from "@fortawesome/free-brands-svg-icons";
+
 const Icons = () => {
   return library.add(
+    fab,
+    faGithub,
     faTimes,
     faSignOutAlt,
     faEdit,

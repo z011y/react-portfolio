@@ -18,7 +18,7 @@
 }
 
 @mixin btn {
-  font-family: "Ubuntu", sans-serif;
+  font-family: $primary-font, sans-serif;
   font-size: 1rem;
   font-weight: 700;
   outline: none;

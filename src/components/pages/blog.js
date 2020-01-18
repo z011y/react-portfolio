@@ -155,7 +155,7 @@ class Blog extends Component {
           </div>
         ) : null}
 
-        <h2>Blog Posts</h2>
+        <h1>Blog Posts</h1>
 
         <div className="blog-items-wrapper">{blogRecords}</div>
 

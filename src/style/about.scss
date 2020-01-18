@@ -1,14 +1,15 @@
 .about-page-container {
   display: grid;
-  grid-template-rows: 100px 600px;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
+  grid-template-rows: 100px 1fr;
 
-  h1 {
+  align-items: center;
+
+  .about-title {
     margin-block-start: 0px;
     margin-block-end: 0px;
     margin-top: 50px;
+    justify-self: center;
+    font-weight: 700;
   }
 
   .about-content-wrapper {
@@ -20,28 +21,111 @@
     .about-text-wrapper {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       padding: 50px;
       margin-left: 50px;
+      margin-top: 25px;
       background-color: white;
       border-radius: 10px;
+
+      .links-wrapper {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 10px;
+      }
+
+      h3 {
+        a {
+          padding: 2px;
+          box-shadow: inset 0 -8px 0 $primary-color;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            background: $primary-color;
+          }
+        }
+      }
+
+      .github-wrapper {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        justify-items: center;
+
+        a {
+          justify-self: start;
+          color: $primary-color;
+        }
+      }
+
+      .linkedin-wrapper {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        justify-items: center;
+        a {
+          justify-self: start;
+          color: $primary-color;
+        }
+      }
+
+      .github-wrapper,
+      .linkedin-wrapper {
+        font-size: 30px;
+        font-weight: 900;
+      }
+
+      h2 {
+        font-weight: 700;
+      }
+
+      p {
+        margin-block-start: 0px;
+        font-family: "Open Sans";
+        letter-spacing: 1px;
+      }
+
+      .projects-wrapper {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 10px;
+        justify-content: start;
+
+        &__links {
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr;
+
+          a {
+            padding: 2px;
+            box-shadow: inset 0 -8px 0 $primary-color;
+            transition: 0.2s ease-in-out;
+            font-size: 18px;
+
+            &:hover {
+              background: $primary-color;
+            }
+          }
+        }
+
+        &__info {
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr;
+        }
+      }
     }
   }
 }
 
 .right-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-img-wrapper {
   display: flex;
   justify-content: center;
-  align-content: flex-end;
-  background-image: url("../../static/assets/images/home/cam-profile1.jpg");
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
+  align-items: flex-end;
+  // background-image: url("../../static/assets/images/home/cam-profile1.jpg");
+  width: 50vw;
   height: 100%;
 }
 

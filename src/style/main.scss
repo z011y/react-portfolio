@@ -25,3 +25,9 @@
 
 // TYPIST
 @import "../../node_modules/react-typist/dist/Typist.css";
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}

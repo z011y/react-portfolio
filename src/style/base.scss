@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: $primary-font, sans-serif;
   font-weight: 400 !important;
 }
 
@@ -13,4 +13,12 @@ h3 {
 .container {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+pre {
+  background-color: $light-grey;
+  padding: 20px;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 10px;
 }
