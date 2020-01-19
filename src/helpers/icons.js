@@ -10,7 +10,8 @@ import {
   faPlusSquare,
   faMobile,
   faEnvelope,
-  faGlobeAmericas
+  faGlobeAmericas,
+  faCode
 } from "@fortawesome/free-solid-svg-icons";
 
 import { fab, faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -27,7 +28,8 @@ const Icons = () => {
     faPlusSquare,
     faMobile,
     faEnvelope,
-    faGlobeAmericas
+    faGlobeAmericas,
+    faCode
   );
 };
 

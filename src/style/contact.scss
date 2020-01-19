@@ -3,23 +3,15 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 150px);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 75%;
-
-  img {
-    height: 100%;
-  }
+  flex-direction: column;
 
   .contact-modal-wrapper {
     display: grid;
-    grid-template-rows: 2fr 1fr 2fr;
-    grid-gap: 10px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 5px solid black;
-    border-radius: 10px;
+    grid-template-rows: 60px 60px 60px;
+    justify-content: start;
+    align-items: end;
+
+    border-top: 8px solid $primary-color;
     height: 50vh;
     width: 50vw;
     background-color: white;
@@ -27,28 +19,40 @@
     color: black;
 
     .phone {
-      display: flex;
+      display: grid;
+      grid-template-columns: 50px 1fr;
       align-items: center;
 
-      .phone-number {
-        margin-left: 20px;
+      svg {
+        justify-self: center;
       }
     }
 
     .email {
-      display: flex;
+      display: grid;
       align-items: center;
-      .email-address {
-        margin-left: 20px;
+      grid-template-columns: 50px 1fr;
+      svg {
+        justify-self: center;
       }
     }
 
     .address {
-      display: flex;
+      display: grid;
       align-items: center;
-      .physical-address {
-        margin-left: 20px;
+      grid-template-columns: 50px 1fr;
+      svg {
+        justify-self: center;
       }
     }
+  }
+}
+
+@media (max-width: 880px) {
+  h1 {
+    padding: 0px 20px 0px 20px;
+  }
+  .contact-modal-wrapper {
+    width: 100% !important;
   }
 }

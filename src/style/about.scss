@@ -47,8 +47,8 @@
 
       .github-wrapper {
         display: grid;
-        grid-template-columns: 50px 1fr;
-        justify-items: center;
+        grid-template-columns: 40px 1fr;
+        justify-items: start;
 
         a {
           justify-self: start;
@@ -58,8 +58,8 @@
 
       .linkedin-wrapper {
         display: grid;
-        grid-template-columns: 50px 1fr;
-        justify-items: center;
+        grid-template-columns: 40px 1fr;
+        justify-items: start;
         a {
           justify-self: start;
           color: $primary-color;
@@ -70,6 +70,7 @@
       .linkedin-wrapper {
         font-size: 30px;
         font-weight: 900;
+        align-items: center;
       }
 
       h2 {
@@ -80,6 +81,16 @@
         margin-block-start: 0px;
         font-family: "Open Sans";
         letter-spacing: 1px;
+      }
+
+      .projects-title {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        align-items: center;
+
+        svg {
+          font-size: 25px;
+        }
       }
 
       .projects-wrapper {
@@ -131,4 +142,39 @@
 
 .backgroundImg {
   width: 100%;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 1024px) {
+  .about-content-wrapper {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: [s] 400px [m] 1fr [e];
+
+    .right-column {
+      grid-row: s/m;
+
+      .profile-img-wrapper {
+        width: 75vw;
+
+        img {
+          border-bottom: 16px solid $primary-color;
+        }
+      }
+    }
+
+    .about-text-wrapper {
+      grid-row: m/e;
+
+      margin-left: 0px !important;
+      margin-top: 0px !important;
+      background-color: white;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+}
+
+@media (max-width: 640px) {
 }

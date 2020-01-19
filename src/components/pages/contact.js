@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function() {
   return (
     <div className="contact-page-wrapper">
+      <h1>Looking to hire? Contact me by phone or email</h1>
       <div className="contact-modal-wrapper">
         <div className="phone">
           <FontAwesomeIcon icon="mobile" />

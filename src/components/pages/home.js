@@ -34,7 +34,7 @@ export default class Home extends Component {
           <Link to="/about-me">About</Link>
         </div>
 
-        <div class="hidden-background"></div>
+        <div className="hidden-background"></div>
         <div className="skills-title">
           <h1>technical skills</h1>
         </div>

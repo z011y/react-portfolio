@@ -22,7 +22,7 @@ const BlogItem = props => {
           <div className="blog-text-wrapper">
             <h2>{title}</h2>
             <div>
-              <Truncate lines={5} ellipsis={<span>{"... "}</span>}>
+              <Truncate lines={2} ellipsis={<span>{"... "}</span>}>
                 {striptags(content)}
               </Truncate>
             </div>

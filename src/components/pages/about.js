@@ -53,7 +53,10 @@ export default class About extends Component {
               Python, but I'm a quick learner and I'm excited to continue
               expanding my knowledge.
             </p>
-            <h2>Projects</h2>
+            <div className="projects-title">
+              <FontAwesomeIcon icon="code" />
+              <h2>Projects</h2>
+            </div>
             <div className="projects-wrapper">
               <div className="projects-wrapper__links">
                 <div className="projects-wrapper__links-wrapper">

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
+
+import Login from "../auth/login";
 
 import logo from "../../../static/assets/images/nav/4x/shield-logo.png";
 
@@ -17,8 +19,6 @@ export default class NavigationContainer extends Component {
     };
 
     const hamburgerMenu = window.matchMedia("max-width: 880px");
-
-    console.log(hamburgerMenu);
 
     hamburgerMenu.addListener(this.checkForMobile);
 
@@ -72,8 +72,7 @@ export default class NavigationContainer extends Component {
       .delete("https://api.devcamp.space/logout", { withCredentials: true })
       .then(response => {
         if (response.status === 200) {
-          props.history.push("/");
-          props.handleSuccessfulLogout();
+          this.props.handleSuccessfulLogout();
         }
         return response.data;
       })
