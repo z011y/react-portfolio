@@ -1,39 +1,30 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import HamburgerMenu from "react-hamburger-menu";
+import withSizes from "react-sizes";
 
 import Login from "../auth/login";
+import NavLinks from "./nav-links";
 
 import logo from "../../../static/assets/images/nav/4x/shield-logo.png";
 
-export default class NavigationContainer extends Component {
+class NavigationContainer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       navbarScroll: "",
-      hamburgerIcon: false,
-      hamburgerIsOpen: false
+      isMobile: false,
+      screenWidth: null,
+      menuClicked: false
     };
-
-    const hamburgerMenu = window.matchMedia("max-width: 880px");
-
-    hamburgerMenu.addListener(this.checkForMobile);
 
     this.dynamicLink = this.dynamicLink.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
-    this.checkForMobile = this.checkForMobile.bind(this);
-    window.addEventListener("scroll", this.onScroll, false);
-  }
-
-  componentWillMount() {
-    this.checkForMobile();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScroll, false);
+    this.closeMenu = this.closeMenu.bind(this);
   }
 
   dynamicLink(route, linkText) {
@@ -46,11 +37,11 @@ export default class NavigationContainer extends Component {
     );
   }
 
-  checkForMobile = () => {
+  closeMenu() {
     this.setState({
-      hamburgerIcon: true
+      menuClicked: false
     });
-  };
+  }
 
   onScroll = () => {
     if (
@@ -81,53 +72,57 @@ export default class NavigationContainer extends Component {
       });
   }
 
+  handleClick() {
+    this.setState({
+      menuClicked: !this.state.menuClicked
+    });
+  }
+
   render() {
     return (
       <div className="nav-wrapper">
         <div className="left-side">
-          <div className="logo-wrapper">
+          <Link to="/" className="logo-wrapper">
             <img src={logo} />
-          </div>
+          </Link>
         </div>
+        {this.props.isMobile === false ? (
+          <NavLinks
+            navbarScroll={this.navbarScroll}
+            loggedInStatus={this.props.loggedInStatus}
+            dynamicLink={this.dynamicLink}
+            handleSignOut={this.handleSignOut}
+            closeMenu={this.closeMenu}
+          />
+        ) : (
+          <div className="navigation-mobile">
+            <div className="menu">
+              <HamburgerMenu
+                isOpen={this.state.menuClicked}
+                menuClicked={this.handleClick.bind(this)}
+                strokeWidth={8}
+                borderRadius={10}
+              />
+            </div>
 
-        <div className={"right-side " + this.state.navbarScroll}>
-          <div className="nav-link-wrapper">
-            <NavLink exact to="/" activeClassName="nav-link-active">
-              Home
-            </NavLink>
+            {this.state.menuClicked === true ? (
+              <NavLinks
+                navbarScroll={this.navbarScroll}
+                loggedInStatus={this.props.loggedInStatus}
+                dynamicLink={this.dynamicLink}
+                handleSignOut={this.handleSignOut}
+                closeMenu={this.closeMenu}
+              />
+            ) : null}
           </div>
-
-          <div className="nav-link-wrapper">
-            <NavLink to="/about-me" activeClassName="nav-link-active">
-              About
-            </NavLink>
-          </div>
-
-          <div className="nav-link-wrapper">
-            <NavLink to="/contact" activeClassName="nav-link-active">
-              Contact
-            </NavLink>
-          </div>
-
-          <div className="nav-link-wrapper">
-            <NavLink to="/blog" activeClassName="nav-link-active">
-              Blog
-            </NavLink>
-          </div>
-
-          {this.props.loggedInStatus === "LOGGED_IN"
-            ? this.dynamicLink("/portfolio-manager", "Portfolio Manager")
-            : null}
-
-          {this.props.loggedInStatus === "LOGGED_IN" ? (
-            <a onClick={this.handleSignOut} className="sign-out-icon">
-              <FontAwesomeIcon icon="sign-out-alt" />
-            </a>
-          ) : null}
-        </div>
+        )}
       </div>
     );
   }
 }
 
-// export default withRouter(NavigationContainer);
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width < 880
+});
+
+export default withSizes(mapSizesToProps)(NavigationContainer);
