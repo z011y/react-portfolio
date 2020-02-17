@@ -1,7 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0px;
+  margin: 0;
   font-family: $primary-font, sans-serif;
   font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1,
@@ -21,5 +31,4 @@ pre {
   font-size: 14px;
   width: 100%;
   border-radius: 10px;
-  width: 90%;
 }

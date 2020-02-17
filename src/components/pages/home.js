@@ -15,23 +15,33 @@ export default class Home extends Component {
         <div className="title-wrapper">
           <div className="title">
             <div className="name">
-              <span>></span>
+              <div className="dots-wrapper">
+                <div className="red-dot"></div>
+                <div className="yellow-dot"></div>
+                <div className="green-dot"></div>
+              </div>
+              <div className="name-text">
+                <span>></span>
 
-              <Typist
-                cursor={{ element: "_" }}
-                avgTypingDelay={100}
-                startDelay={500}
-              >
-                Cameron <br /> Zollinger
-              </Typist>
+                <Typist
+                  cursor={{ element: "_" }}
+                  avgTypingDelay={100}
+                  startDelay={500}
+                >
+                  Cameron <br /> Zollinger
+                </Typist>
+              </div>
             </div>
             <h3>
               a full stack web developer with a<br />{" "}
               <b>design-minded approach</b> to development
             </h3>
           </div>
-          <h3>learn more about me</h3>
-          <Link to="/about-me">About</Link>
+          <div className="learn-more">
+            <h3>learn more about me</h3>
+            <Link to="/about-me">About</Link>
+            <div className="green-background"></div>
+          </div>
         </div>
 
         <div className="hidden-background"></div>

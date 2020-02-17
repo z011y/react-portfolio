@@ -60,10 +60,14 @@ export default class About extends Component {
             <div className="projects-wrapper">
               <div className="projects-wrapper__links">
                 <div className="projects-wrapper__links-wrapper">
-                  <a href="/">Bird Ponchos</a>
+                  <a href="https://tavernmusic.now.sh" target="blank">
+                    Tavern Music
+                  </a>
                 </div>
                 <div className="projects-wrapper__links-wrapper">
-                  <a href="/">Beetle</a>
+                  <a href="https://birdponchos.now.sh" target="blank">
+                    Bird Ponchos
+                  </a>
                 </div>
                 <div className="projects-wrapper__links-wrapper">
                   <a
@@ -75,8 +79,9 @@ export default class About extends Component {
                 </div>
               </div>
               <div className="projects-wrapper__info">
-                <p>Ecommerce Site</p>
-                <p>Python Web Crawler</p>
+                <p>Connecting Local Musicians to Local Venues</p>
+                <p>Front End Ecommerce Site</p>
+
                 <p>Event Site</p>
               </div>
             </div>

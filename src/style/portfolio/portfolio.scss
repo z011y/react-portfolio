@@ -2,13 +2,17 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 
   .portfolio-items-wrapper {
     background-color: white;
     display: grid;
+    grid-gap: 30px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 100%;
     box-sizing: border-box;
+    padding: 30px;
+    overflow: hidden;
   }
 }
 
@@ -20,12 +24,14 @@
   position: sticky;
   top: 0px;
   z-index: 100;
+  border: none;
 
   .btn {
     margin-bottom: 20px;
     color: white;
     font-family: $primary-font, sans-serif;
     @include base-btn();
+    border: none;
   }
 }
 
@@ -33,6 +39,7 @@
   position: relative;
 
   .portfolio-img-background {
+    border-radius: 10px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -105,13 +112,6 @@
     }
   }
 
-  .btn-wrapper {
-    height: 50px;
-
-    .btn {
-      font-size: 12px;
-    }
-  }
   .portfolio-img-background {
     height: 200px !important;
   }
